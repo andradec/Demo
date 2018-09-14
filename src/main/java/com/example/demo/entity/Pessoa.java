@@ -1,25 +1,35 @@
 package com.example.demo.entity;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
 public abstract class Pessoa
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
     private Long id;
 
+    @Column(name = "Name")
     private String name;
 
+    @Column(name = "Birthday")
     private LocalDate birthday;
 
+    @Column(name = "Address")
     private Address endereco;
 
-    private Telfone telfone;
+    @Column(name = "Telefone")
+    private Telefone telefone;
 
-    public Pessoa(Long id, String name, LocalDate birthday, Address endereco, Telfone telfone) {
+    public Pessoa(Long id, String name, LocalDate birthday, Address endereco, Telefone telefone) {
+
         this.id = id;
         this.name = name;
         this.birthday = birthday;
         this.endereco = endereco;
-        this.telfone = telfone;
+        this.telefone = telefone;
     }
 
     public Long getId() {
@@ -38,8 +48,8 @@ public abstract class Pessoa
         return endereco;
     }
 
-    public Telfone getTelfone() {
-        return telfone;
+    public Telefone getTelefone() {
+        return telefone;
     }
 
     public void setId(Long id) {
@@ -58,7 +68,7 @@ public abstract class Pessoa
         this.endereco = endereco;
     }
 
-    public void setTelfone(Telfone telfone) {
-        this.telfone = telfone;
+    public void setTelefone(Telefone telefone) {
+        this.telefone = telefone;
     }
 }

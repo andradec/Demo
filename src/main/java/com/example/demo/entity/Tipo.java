@@ -1,17 +1,17 @@
 package com.example.demo.entity;
 
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
+@Entity
 public enum  Tipo {
 
-    @Enumerated(value = EnumType.STRING)
-            private String tipo;
 
-    COMERCIAL("C", "Comercial"),
-    RESIDENCIAL("R", "Residencial"),
-    CELULAR("Cel", "Celular"),
-    FAX("F", "Fax");
+    COMERCIAL("Comercial"),
+    RESIDENCIAL("Residencial"),
+    CELULAR( "Celular"),
+    FAX("Fax");
 
 
     String descricao;

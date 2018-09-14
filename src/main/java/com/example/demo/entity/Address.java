@@ -1,15 +1,25 @@
 package com.example.demo.entity;
 
+import javax.persistence.*;
+
+@Entity
 public class Address {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
     private Long id;
 
+    @Column(name = "Endereco")
     private String address;
 
+    @Column(name = "number")
     private Integer numero;
 
+    @Column(name = "City")
     private String cidade;
 
+    @Column(name = "Complemento")
     private String complemento;
 
     public Long getId() {
